@@ -1,9 +1,8 @@
 # Source: https://twitter.com/JaneScott_/status/1065995260554170369
 
-curl "https://crt.sh/?q=%.example.com&output=json" | jq '.name_value' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u
+# NOT WORKING
+# curl "https://crt.sh/?q=%.example.com&output=json" | jq '.name_value' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u
 
-curl 'https://crt.sh/?q=%.example.com&output=json' | jq '.name_value' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u
-
-curl 'https://crt.sh/?q=%.example.com&output=json' | jq -r '.name_value' | sed 's/\*\.//g' | sort -u
-
-curl 'https://crt.sh/?q=%.example.com' -H 'Accept: application/json'
+# WORKING
+# Just replacte the example.com with any domain and you will get a list  of sub/domains.
+$curl 'https://crt.sh/?q=%.example.com&output=json' | jq -r '.[] | .name_value' | sort -u
