@@ -1,4 +1,12 @@
 #   Generate UPI URL based on Specification Document 1.5
+#   Install Dependencies:
+#   pip install pyperclip
+#		pip install qrcode
+#   pip install git+git://github.com/ojii/pymaging.git#egg=pymaging
+#   pip install git+git://github.com/ojii/pymaging-png.git#egg=pymaging-png
+#   
+#   
+
 import sys, os, pyperclip
 import urllib.parse
 import qrcode, qrcode.image.svg
